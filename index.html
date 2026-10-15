@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#e8f1f6" />
+  <meta name="description" content="Vittoria e Gabriele vi invitano a celebrare il loro matrimonio il 10 giugno 2027 a Capo Milazzo." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Vittoria & Gabriele | 10 giugno 2027" />
+  <meta property="og:description" content="Undici anni insieme, due figli e un amore che cresce ogni giorno. Siete invitati al nostro giorno speciale." />
+  <meta property="og:image" content="assets/images/vittoria-gabriele-photo.webp" />
+  <title>Vittoria & Gabriele · Il nostro matrimonio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Sans:wght@300;400;500;600&family=Italianno&display=swap" rel="stylesheet" />
+  <link rel="preload" href="assets/images/blue-envelope-closed.jpg" as="image" />
+  <link rel="preload" href="assets/images/hero-handoff.webp" as="image" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/minimal.css" />
+  <link rel="stylesheet" href="assets/css/intro-integration.css" />
+  <link rel="stylesheet" href="assets/css/dress-code.css" />
+  <link rel="stylesheet" href="assets/css/contrast.css" />
+  <link rel="stylesheet" href="assets/css/botanical-palette.css" />
+</head>
+<body class="is-locked">
+  <div id="preloader" class="preloader" role="status" aria-label="Caricamento in corso">
+    <div class="preloader__monogram">V<span>&</span>G</div>
+    <div class="preloader__line"><span></span></div>
+    <p>UN GIORNO DA RICORDARE</p>
+  </div>
+
+  <!-- Original user-supplied seven-second cinematic envelope video. -->
+  <section class="cover" id="cover" aria-label="La busta di Vittoria e Gabriele" data-phase="closed">
+    <img class="cover__poster" src="assets/images/blue-envelope-closed.jpg" width="1080" height="1920" alt="" fetchpriority="high" />
+    <video class="cover__video" id="envelopeVideo" muted playsinline webkit-playsinline preload="auto" poster="assets/images/blue-envelope-closed.jpg" disablepictureinpicture disableremoteplayback aria-hidden="true">
+      <source src="assets/video/blue-envelope-opening.mp4" type="video/mp4" />
+    </video>
+    <button class="cover__trigger" id="openInvite" type="button" aria-label="Apri l'invito">
+      <span class="cover__touch-label">TOCCA IL SIGILLO PER APRIRE</span>
+    </button>
+    <button class="cover__skip" id="skipIntro" type="button" hidden>Salta l'introduzione</button>
+    <span class="sr-only" id="coverStatus" aria-live="polite">Invito chiuso. Tocca per aprire.</span>
+  </section>
+
+  <!-- The actual existing page emerges through the window tracking the paper card in the MP4. -->
+  <div id="siteReveal" class="site-reveal">
+  <main id="main" class="main" inert>
+    <section class="hero" id="inizio" aria-label="Invito al matrimonio di Vittoria e Gabriele">
+      <div class="hero__visual" aria-hidden="true">
+        <!-- Exact final frame of envelope-opening.mp4: identical crop on any phone size -->
+        <div class="hero__photo"></div>
+        <div class="hero__mist"></div>
+      </div>
+      <div class="hero__inner">
+        <p class="eyebrow hero__eyebrow" data-reveal>IL NOSTRO MATRIMONIO</p>
+        <div class="hero__names" data-reveal>Vittoria <span>&</span> Gabriele</div>
+        <div class="hero__rule" data-reveal><span></span> ✧ <span></span></div>
+        <h1 class="hero__subtitle" data-reveal>Una storia, un sì per sempre</h1>
+        <p class="hero__date" data-reveal>GIOVEDÌ · 10 GIUGNO 2027</p>
+        <p class="hero__place" data-reveal>Capo Milazzo · Sicilia</p>
+      </div>
+      <div class="hero__scroll">SCOPRI L’INVITO <span>↓</span></div>
+    </section>
+
+    <section class="paper-section intro-story" id="storia">
+      <p class="eyebrow" data-reveal>LA NOSTRA STORIA</p>
+      <h2 class="editorial-title" data-reveal>Undici anni.<br/><em>Un amore infinito.</em></h2>
+      <p class="editorial-copy lead" data-reveal>Undici anni insieme, due figli e un amore che cresce ogni giorno.</p>
+      <figure class="couple-photo" data-reveal>
+        <img src="assets/images/vittoria-gabriele-photo.webp" loading="lazy" alt="Vittoria e Gabriele insieme al tramonto sul mare" />
+        <figcaption>La nostra storia, il nostro per sempre.</figcaption>
+      </figure>
+      <p class="editorial-copy" data-reveal>Ora vogliamo dire <em>sì, per sempre</em>, davanti a chi amiamo.</p>
+      <p class="editorial-copy closer" data-reveal>Siamo lieti di invitarvi al nostro matrimonio.</p>
+      <span class="small-flourish" aria-hidden="true">♡</span>
+    </section>
+
+    <section class="paper-section date-section" id="data">
+      <p class="eyebrow" data-reveal>SAVE THE DATE</p>
+      <h2 class="editorial-title" data-reveal>Il nostro<br/><em>grande giorno</em></h2>
+      <p class="date-number" data-reveal>10<span class="date-month">GIUGNO</span>2027</p>
+      <p class="date-weekday" data-reveal>GIOVEDÌ · ORE 18:00</p>
+      <div class="calendar" aria-label="Calendario giugno 2027" data-reveal>
+        <div class="calendar__month">GIUGNO 2027</div>
+        <div class="calendar__grid calendar__days"><span>L</span><span>M</span><span>M</span><span>G</span><span>V</span><span>S</span><span>D</span></div>
+        <div class="calendar__grid calendar__dates"><span class="cal-empty" aria-hidden="true"></span>
+<span>1</span>
+<span>2</span>
+<span>3</span>
+<span>4</span>
+<span>5</span>
+<span>6</span>
+<span>7</span>
+<span>8</span>
+<span>9</span>
+<strong class="cal-selected" aria-label="10 giugno, giorno del matrimonio">10</strong>
+<span>11</span>
+<span>12</span>
+<span>13</span>
+<span>14</span>
+<span>15</span>
+<span>16</span>
+<span>17</span>
+<span>18</span>
+<span>19</span>
+<span>20</span>
+<span>21</span>
+<span>22</span>
+<span>23</span>
+<span>24</span>
+<span>25</span>
+<span>26</span>
+<span>27</span>
+<span>28</span>
+<span>29</span>
+<span>30</span>
+<span class="cal-empty" aria-hidden="true"></span>
+<span class="cal-empty" aria-hidden="true"></span>
+<span class="cal-empty" aria-hidden="true"></span>
+<span class="cal-empty" aria-hidden="true"></span></div>
+      </div>
+      <span class="small-flourish" aria-hidden="true">✧</span>
+    </section>
+
+    <section class="venue-visual" aria-label="Atmosfera mediterranea">
+      <img src="assets/images/mediterranean-ceremony.webp" loading="lazy" alt="Atmosfera mediterranea con fiori chiari e mare azzurro, immagine illustrativa" />
+      <div class="venue-visual__caption">Un giorno da ricordare</div>
+    </section>
+    <section class="paper-section venue" id="luogo">
+      <p class="eyebrow" data-reveal>DOVE CI VEDIAMO</p>
+      <h2 class="editorial-title" data-reveal>Il nostro<br/><em>luogo speciale</em></h2>
+      <p class="venue__name" data-reveal>Sala Ricevimenti Paradiso</p>
+      <p class="venue__address" data-reveal>Capo Milazzo · Sicilia</p>
+      <a class="minimal-button" href="https://share.google/NdD6KJssAIlGgNYQP" target="_blank" rel="noopener noreferrer" data-reveal>APRI LA POSIZIONE <span>↗</span></a>
+    </section>
+
+    <section class="paper-section schedule" id="programma">
+      <p class="eyebrow" data-reveal>I MOMENTI DELLA GIORNATA</p>
+      <h2 class="editorial-title" data-reveal>Il <em>programma</em></h2>
+      <div class="minimal-timeline">
+        <div class="minimal-timeline__item" data-reveal><time>18:00</time><span class="timeline__dot"></span><div><strong>Cerimonia</strong><p>Il nostro sì</p></div></div>
+        <div class="minimal-timeline__item" data-reveal><time>19:00</time><span class="timeline__dot"></span><div><strong>Aperitivo di benvenuto</strong><p>e buffet</p></div></div>
+        <div class="minimal-timeline__item" data-reveal><time>20:30</time><span class="timeline__dot"></span><div><strong>Cena</strong><p>Tutti insieme</p></div></div>
+        <div class="minimal-timeline__item" data-reveal><time>22:00</time><span class="timeline__dot"></span><div><strong>Apertura delle danze</strong><p>La festa continua</p></div></div>
+        <div class="minimal-timeline__item" data-reveal><time>00:00</time><span class="timeline__dot"></span><div><strong>Taglio della torta</strong><p>Un momento speciale</p></div></div>
+      </div>
+    </section>
+
+    <section class="paper-section dress-minimal" id="dress-code">
+      <p class="eyebrow" data-reveal>PER ESSERE PARTE DEL NOSTRO GIORNO</p>
+      <h2 class="editorial-title" data-reveal>Dress <em>code</em></h2>
+      <p class="dress-minimal__sub" data-reveal>Elegante in azzurro e blu</p>
+      <p class="editorial-copy" data-reveal>Vi invitiamo a scegliere un outfit elegante, preferibilmente nelle tonalità dell’azzurro e del blu, per accompagnarci in questa giornata speciale.</p>
+      <div class="looks" data-reveal>
+        <div class="looks__tabs" role="tablist" aria-label="Idee per l'abbigliamento">
+          <button class="look-tab active" type="button" role="tab" aria-selected="true" aria-controls="lookWomen" id="tabWomen">PER LEI</button>
+          <button class="look-tab" type="button" role="tab" aria-selected="false" aria-controls="lookMen" id="tabMen">PER LUI</button>
+        </div>
+        <div class="look-panel" id="lookWomen" role="tabpanel" aria-labelledby="tabWomen">
+          <button class="dress-look-image" type="button" data-dress-image="women" aria-label="Ingrandisci gli outfit per lei">
+            <img src="assets/images/dress-code-women.jpg" alt="Cinque esempi di abiti eleganti da donna, azzurro, bianco e motivi floreali" width="447" height="329" decoding="async" />
+            <span class="dress-look-zoom">TOCCA PER INGRANDIRE <span aria-hidden="true">↗</span></span>
+          </button>
+          <p class="look-panel__title">Abiti eleganti</p>
+          <p>Vestiti lunghi o midi, completi raffinati e tonalità azzurre.</p>
+        </div>
+        <div class="look-panel" id="lookMen" role="tabpanel" aria-labelledby="tabMen" hidden>
+          <button class="dress-look-image" type="button" data-dress-image="men" aria-label="Ingrandisci gli outfit per lui">
+            <img src="assets/images/dress-code-men.jpg" alt="Quattro esempi di abbigliamento elegante da uomo, beige, blu e grigio" width="444" height="310" decoding="async" loading="lazy" />
+            <span class="dress-look-zoom">TOCCA PER INGRANDIRE <span aria-hidden="true">↗</span></span>
+          </button>
+          <p class="look-panel__title">Completi raffinati</p>
+          <p>Abiti sartoriali o spezzati nelle sfumature del blu.</p>
+        </div>
+      </div>
+      <figure class="dress-palette-art" data-reveal>
+        <figcaption class="palette-note">LA PALETTE DEL NOSTRO GIORNO</figcaption>
+        <img src="assets/images/dress-code-palette.webp" alt="Palette per il dress code: avorio, verde salvia, azzurro polvere, tortora e grigio antracite" width="681" height="178" decoding="async" loading="lazy" />
+      </figure>
+    </section>
+
+    <section class="paper-section gift-minimal" id="regalo">
+      <p class="eyebrow" data-reveal>UN PENSIERO PER NOI</p>
+      <h2 class="editorial-title" data-reveal>Il regalo<br/><em>più bello</em></h2>
+      <p class="editorial-copy" data-reveal>La vostra presenza è già il regalo più bello che possiate farci.</p>
+      <p class="editorial-copy" data-reveal>Se però desiderate farci un dono speciale, saremo felici di ricevere un contributo per realizzare insieme un nostro piccolo grande sogno.</p>
+      <button type="button" class="minimal-button minimal-button--line" id="showBank" aria-expanded="false" aria-controls="bankDetails">MOSTRA I DATI PER IL REGALO <span>+</span></button>
+      <div class="bank-details" id="bankDetails" hidden>
+        <p class="bank-details__label">INTESTATARIO</p><p class="bank-details__value">Vittoria Spanò</p>
+        <p class="bank-details__label">IBAN</p><p class="bank-details__value bank-details__value--iban">IT38 Y020 0816 5130 0042 1389 696</p>
+        <button type="button" class="copy-button" id="copyIban">Copia IBAN <span aria-hidden="true">⧉</span></button>
+        <p class="bank-details__label">BIC/SWIFT</p><p class="bank-details__value">UNCRITM1Z57</p>
+        <p class="bank-details__hint">Per bonifici dall’estero</p>
+      </div>
+    </section>
+
+    <section class="section rsvp minimal-rsvp" id="rsvp">
+      <p class="eyebrow" data-reveal>LA TUA RISPOSTA</p>
+      <h2 class="section-title" data-reveal>Conferma la tua<br/><em>presenza</em></h2>
+      <p class="section-text" data-reveal>Ci aiuterai a rendere questo giorno ancora più speciale. Ti chiediamo gentilmente di comunicarci la tua presenza, la preferenza per il menù e le eventuali allergie o intolleranze alimentari.</p>
+      <form id="rsvpForm" class="rsvp__form" novalidate data-reveal>
+        <label for="guestName" class="field-label">NOME E COGNOME <span aria-hidden="true">*</span></label>
+        <input id="guestName" name="name" type="text" placeholder="Il tuo nome e cognome" maxlength="120" autocomplete="name" required />
+
+        <fieldset class="option-fieldset">
+          <legend class="field-label">PARTECIPERAI AL MATRIMONIO? <span aria-hidden="true">*</span></legend>
+          <div class="option-grid">
+            <label class="option-card"><input type="radio" name="attendance" value="yes" required /><span>Sì, saremo presenti! <span aria-hidden="true">♡</span></span></label>
+            <label class="option-card"><input type="radio" name="attendance" value="no" /><span>Non potrò esserci</span></label>
+          </div>
+        </fieldset>
+
+        <div id="attendanceDetails" class="attendance-details" hidden>
+          <fieldset class="option-fieldset">
+            <legend class="field-label">PREFERENZA PER IL MENÙ <span aria-hidden="true">*</span></legend>
+            <div class="option-grid">
+              <label class="option-card"><input type="radio" name="menu" value="Carne" /><span>Carne</span></label>
+              <label class="option-card"><input type="radio" name="menu" value="Pesce" /><span>Pesce</span></label>
+            </div>
+          </fieldset>
+          <fieldset class="option-fieldset">
+            <legend class="field-label">ALLERGIE O INTOLLERANZE? <span aria-hidden="true">*</span></legend>
+            <div class="option-grid">
+              <label class="option-card"><input type="radio" name="allergy" value="no" /><span>No</span></label>
+              <label class="option-card"><input type="radio" name="allergy" value="yes" /><span>Sì, da specificare</span></label>
+            </div>
+          </fieldset>
+          <label id="allergyLabel" for="allergyDetails" class="field-label" hidden>SPECIFICA LE ALLERGIE <span aria-hidden="true">*</span></label>
+          <textarea id="allergyDetails" name="allergyDetails" rows="3" placeholder="Scrivi le eventuali allergie o intolleranze" maxlength="1000" hidden></textarea>
+        </div>
+        <p id="rsvpError" class="form-error" role="alert" hidden></p>
+        <button type="submit" class="button button--dark rsvp__submit">CONFERMA SU WHATSAPP <span>↗</span></button>
+        <p class="form-note">Si aprirà WhatsApp con il tuo messaggio già compilato. Ricordati di premere <strong>Invia</strong> per confermare. I dati non vengono salvati su questo sito.</p>
+      </form>
+      <p class="rsvp__signature" data-reveal>Grazie di cuore per esserci vicini.</p>
+    </section>
+
+
+
+    <section class="minimal-finale" id="saluti">
+      <p class="eyebrow" data-reveal>CI VEDIAMO PRESTO</p>
+      <h2 data-reveal>Sarà il giorno<br/>più bello.</h2>
+      <p data-reveal>E lo sarà ancora di più con voi accanto a noi.</p>
+      <span class="small-flourish" aria-hidden="true">♡</span>
+      <span class="minimal-finale__sign">Con affetto,</span>
+      <strong>Vittoria &amp; Gabriele</strong>
+      <p class="countdown-caption">CI VEDIAMO TRA</p>
+      <div class="countdown" id="countdown" aria-label="Conto alla rovescia fino al matrimonio">
+        <div><strong id="cdDays">—</strong><small>GIORNI</small></div>
+        <div><strong id="cdHours">—</strong><small>ORE</small></div>
+        <div><strong id="cdMinutes">—</strong><small>MINUTI</small></div>
+        <div><strong id="cdSeconds">—</strong><small>SECONDI</small></div>
+      </div>
+    </section>
+    <footer class="footer"><span>10 · 06 · 2027</span><span>CON AMORE ♡</span></footer>
+  </main>
+    <div class="handoff-paper" id="handoffPaper" aria-hidden="true"></div>
+  </div>
+  <button id="musicToggle" class="music-toggle" type="button" aria-label="Attiva la musica" aria-pressed="false" hidden><span id="musicIcon">♫</span></button>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <audio id="bgMusic" loop preload="none"><source src="assets/audio/ambient.mp3" type="audio/mpeg" /></audio>
+  <div class="dress-lightbox" id="dressLightbox" hidden aria-hidden="true">
+    <div class="dress-lightbox__backdrop" data-close-dress></div>
+    <div class="dress-lightbox__dialog" role="dialog" aria-modal="true" aria-labelledby="dressLightboxTitle">
+      <div class="dress-lightbox__header">
+        <span id="dressLightboxTitle">Ispirazioni · Per lei</span>
+        <button class="dress-lightbox__close" type="button" aria-label="Chiudi l'immagine" data-close-dress>×</button>
+      </div>
+      <img class="dress-lightbox__image" id="dressLightboxImage" src="assets/images/dress-code-women.jpg" alt="Ispirazioni per lei" width="736" height="424" />
+      <p class="dress-lightbox__hint">Chiudi per tornare all'invito</p>
+    </div>
+  </div>
+  <script src="assets/js/app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+/* V&G — cinematic blue envelope to LIVE mobile invitation (user-supplied 7.5s MP4). */
+:root{--vg-ivory:#f8f5ee;--vg-ink:#172a33;--vg-blue:#cddfeb}
+body{overscroll-behavior-x:none}
+.cover{position:fixed;inset:0 auto 0 50%;transform:translateX(-50%);max-width:430px;width:100%;height:100vh;height:100dvh;z-index:31;background:#d9eaf3;overflow:hidden;isolation:isolate;transition:none}
+.cover::before{content:'';position:absolute;inset:0;background:#d9eaf3;z-index:-1}
+.cover[hidden]{display:none!important}
+.cover__poster,.cover__video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center;pointer-events:none;background:none}
+.cover__poster{z-index:0}
+.cover__video{z-index:1;opacity:0;transition:none;will-change:opacity}
+.cover.opening .cover__video{opacity:0}
+.cover.has-frame.opening .cover__video{opacity:1}
+.cover__trigger{position:absolute;inset:0;width:100%;height:100%;z-index:2;display:block;border:0;padding:0;margin:0;border-radius:0;background:transparent;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.cover__trigger:focus-visible{outline:2px solid #35566c;outline-offset:-5px}
+.cover__touch-label{position:absolute;left:50%;bottom:max(20px,calc(env(safe-area-inset-bottom) + 16px));transform:translateX(-50%);z-index:3;display:block;min-width:226px;max-width:90%;width:max-content;background:#f6fafacb;border:1px solid rgba(140,165,179,.56);padding:13px 20px;color:#294759!important;text-align:center;font:600 10px/1.3 'DM Sans',sans-serif;letter-spacing:2.15px;box-shadow:0 7px 24px rgba(46,68,82,.11);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);animation:cover-breathe 2.5s ease-in-out infinite}
+@keyframes cover-breathe{50%{box-shadow:0 8px 32px rgba(46,68,82,.2)}}
+.cover[data-phase='playing'] .cover__touch-label{opacity:0;animation:none;transition:opacity .22s}
+.cover[data-phase='playing'] .cover__trigger{pointer-events:none}
+.cover__skip{position:absolute;z-index:9;bottom:max(22px,calc(env(safe-area-inset-bottom) + 18px));right:15px;font:500 10px 'DM Sans',sans-serif;letter-spacing:1px;min-height:36px;padding:8px 10px;border:1px solid rgba(83,111,129,.45);background:#ffffffa6;color:#274454;border-radius:2px;backdrop-filter:blur(7px)}
+.cover__skip[hidden]{display:none}
+/* The aperture is the REAL page, clipped to the moving, expanding sheet in the MP4. */
+.site-reveal{position:relative;width:100%;max-width:430px;margin:0 auto;min-height:100svh;z-index:1}
+.site-reveal .main{max-width:430px;width:100%;margin:0 auto}
+html:not(.intro-done) .site-reveal{position:fixed;z-index:34;top:0;left:0;width:1px;height:1px;min-height:0;max-width:none;margin:0;overflow:hidden;opacity:0;pointer-events:none;contain:layout paint;box-shadow:0 0 0 1px rgba(171,182,180,.17);will-change:left,top,width,height,opacity}
+html:not(.intro-done) .site-reveal .main{position:absolute;left:50%;top:50%;width:390px;min-height:0;height:844px;max-width:none;overflow:hidden;opacity:1!important;transition:none!important;transform-origin:50% 50%;will-change:transform}
+.handoff-paper{display:none}
+html:not(.intro-done) .site-reveal .handoff-paper{display:block;position:absolute;inset:0;z-index:20;pointer-events:none;background:var(--vg-ivory);opacity:1;will-change:opacity}
+html.intro-done .handoff-paper{display:none}
+html.intro-done .site-reveal .main{position:relative;left:auto;top:auto;width:100%;height:auto;transform:none;overflow:hidden;transition:none;opacity:1}
+html.intro-done .cover{display:none!important}
+html:not(.intro-done) .main.intro-playing .hero [data-reveal]{opacity:var(--intro-text-opacity,0)!important;transform:translateY(calc(14px * (1 - var(--intro-text-opacity,0))))!important;transition:none!important}
+/* No page layout is modified: typography and direct-on-photo legibility only. */
+.main :is(.editorial-title,.section-title,.date-number,.venue__name,.look-panel__title,.minimal-finale h2){font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;letter-spacing:-.025em;color:#12232c!important;text-shadow:0 1px 2px rgba(255,255,255,.95),0 0 14px rgba(255,255,255,.75)!important}
+.main :is(.editorial-title em,.section-title em){font-weight:400;letter-spacing:0;text-shadow:0 1px 2px rgba(255,255,255,.95),0 0 14px rgba(255,255,255,.8)!important}
+.main :is(.editorial-copy,.section-text,.minimal-timeline__item p,.minimal-timeline__item strong,.dress-minimal__sub,.venue__address,.bank-details__value,.form-note,.minimal-finale p,.countdown strong,.countdown small){color:#101820!important;font-weight:500;text-shadow:0 1px 2px rgba(255,255,255,.97),0 0 14px rgba(255,255,255,.78)!important}
+.main :is(.eyebrow,.calendar__month,.calendar__grid,.field-label,.palette-note,.countdown-caption){color:#121d25!important;font-weight:600;letter-spacing:2.2px;text-shadow:0 1px 1px rgba(255,255,255,.98),0 0 11px rgba(255,255,255,.8)!important}
+/* Fashion/editorial first-screen names, readable over the original sea photograph. */
+.main .hero__inner{max-width:360px;width:100%}
+.main .hero__names{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(57px,16.1vw,75px);font-style:italic;font-weight:600;line-height:.86;letter-spacing:-.045em;overflow-wrap:normal;text-shadow:0 2px 5px rgba(16,29,40,.85),0 7px 26px rgba(16,29,40,.58)!important}
+.main .hero__names span{font-family:'Cormorant Garamond',Georgia,serif;font-size:.5em;font-weight:400;font-style:italic;margin:4px 0}
+.main .hero__subtitle{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;font-style:italic;font-size:27px;line-height:1.12;text-shadow:0 2px 5px rgba(16,29,40,.8),0 5px 22px rgba(16,29,40,.52)!important}
+.main .hero__eyebrow,.main .hero__date,.main .hero__place,.main .hero__scroll,.main .hero__rule{color:#fff!important;font-weight:600;text-shadow:0 2px 5px rgba(16,29,40,.8),0 5px 20px rgba(16,29,40,.55)!important}
+.main .hero__eyebrow{font-size:10px;letter-spacing:3px}
+.main .hero__date{font-size:11px;letter-spacing:2.5px}
+.main .hero__place{font-size:22px}
+/* Preserve blue-white Mediterranean photograph and transparent content. */
+.main .paper-section,.main .schedule,.main .dress-minimal,.main .gift-minimal,.main .minimal-rsvp,.main .minimal-finale{background:transparent!important}
+.main .hero__mist{background:linear-gradient(180deg,rgba(20,39,51,.17),rgba(15,30,44,.14) 55%,rgba(22,43,56,.24));}
+@media(max-width:375px){.main .hero__names{font-size:59px}.main .hero__subtitle{font-size:25px}}
+@media(prefers-reduced-motion:reduce){.cover__touch-label{animation:none}}

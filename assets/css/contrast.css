@@ -1,0 +1,256 @@
+/* Contrast typography pass — only pure black and pure white.
+   The fixed terrace background and the envelope MP4 remain unchanged. */
+:root {
+  --text-dark: #000000;
+  --text-light: #ffffff;
+}
+
+/* Apply the high-contrast palette to ALL visible text in the website. */
+.main, .main * {
+  color: var(--text-dark) !important;
+}
+
+/* Unboxed typography on the illustration. A tiny light halo preserves detail
+   behind black lettering without producing visible background panels. */
+.main :is(h1,h2,h3,p,span,strong,small,time,label,legend,figcaption,em,i,a,button),
+.main .countdown,
+.main .calendar {
+  text-shadow: 0 1px 2px rgba(255,255,255,.86), 0 0 12px rgba(255,255,255,.40);
+}
+
+/* Opening/title area is on a darker image; use white with a dark halo. */
+.main .hero, .main .hero * {
+  color: var(--text-light) !important;
+  text-shadow: 0 2px 5px rgba(0,0,0,.60), 0 0 22px rgba(0,0,0,.40);
+}
+
+/* The image caption can cross the light stone terrace: black stays readable. */
+.main .venue-visual, .main .venue-visual * {
+  color: var(--text-dark) !important;
+  text-shadow: 0 1px 3px #fff, 0 0 18px rgba(255,255,255,.82);
+}
+
+/* Black text on light controls; white text on filled dark buttons. */
+.main :is(.minimal-button:not(.minimal-button--line), .button--dark, .rsvp__submit),
+.main :is(.minimal-button:not(.minimal-button--line), .button--dark, .rsvp__submit) * {
+  color: var(--text-light) !important;
+  text-shadow: 0 1px 2px rgba(0,0,0,.34);
+}
+.main :is(.minimal-button--line, .look-tab, .option-card > span, .copy-button),
+.main :is(.minimal-button--line, .look-tab, .option-card > span, .copy-button) * {
+  color: var(--text-dark) !important;
+}
+
+/* RSVP and banking fields, including placeholder and validation feedback. */
+.main input, .main textarea, .main select,
+.main input::placeholder, .main textarea::placeholder {
+  color: var(--text-dark) !important;
+  text-shadow: none !important;
+}
+.main input::placeholder, .main textarea::placeholder { opacity: .72; }
+.main input[type='radio'] { accent-color: #000; }
+.main .form-error { color: var(--text-dark) !important; }
+
+/* Text outside main: loader, invitation action, audio control, toast. */
+.preloader, .preloader *,
+.cover__touch-label, .cover__touch-icon,
+.music-toggle, .music-toggle * {
+  color: var(--text-dark) !important;
+}
+.toast, .toast * { color: var(--text-light) !important; }
+
+/* Keep background photography visible without separate grey/blue text plates. */
+.main::after {
+  background: rgba(255,255,255,.10);
+}
+.main .paper-section, .main .paper-section:nth-of-type(even),
+.main .schedule, .main .dress-minimal, .main .gift-minimal,
+.main .minimal-rsvp, .main .minimal-finale, .main .footer {
+  background: transparent !important;
+}
+
+/* No color-changing effects during press/hover states. */
+.main a:hover, .main a:focus-visible,
+.main button:hover, .main button:focus-visible {
+  text-decoration-color: currentColor;
+}
+
+/* ===== Readability boost for text over photo background ===== */
+
+/* Main headings */
+.hero__names,
+.hero__subtitle,
+.editorial-title,
+.section-title,
+.venue__name,
+.date-number,
+.look-panel__title,
+.minimal-finale h2 {
+  color: #fff !important;
+  text-shadow:
+    0 2px 10px rgba(0, 0, 0, 0.34),
+    0 6px 24px rgba(0, 0, 0, 0.22),
+    0 0 18px rgba(255, 255, 255, 0.10);
+}
+
+/* Secondary text */
+.hero__date,
+.hero__place,
+.hero__scroll,
+.eyebrow,
+.editorial-copy,
+.date-weekday,
+.venue__address,
+.minimal-timeline__item time,
+.minimal-timeline__item strong,
+.minimal-timeline__item p,
+.palette-note,
+.dress-minimal__sub,
+.dress-minimal__hint,
+.form-note,
+.rsvp__signature,
+.countdown-caption,
+.minimal-finale p,
+.bank-details__label,
+.bank-details__value,
+.bank-details__hint,
+.calendar__month,
+.calendar__grid,
+.footer,
+.look-panel p,
+.field-label,
+.option-card > span {
+  color: #fdfdfd !important;
+  text-shadow:
+    0 1px 6px rgba(0, 0, 0, 0.38),
+    0 3px 14px rgba(0, 0, 0, 0.20),
+    0 0 12px rgba(255, 255, 255, 0.08);
+}
+
+/* Small soft glow behind key title groups without visible boxes */
+.hero__inner,
+.intro-story,
+.date-section,
+.venue,
+.schedule,
+.dress-minimal,
+.gift-minimal,
+.minimal-rsvp,
+.minimal-finale {
+  position: relative;
+}
+
+.hero__inner::before,
+.intro-story::before,
+.date-section::before,
+.venue::before,
+.schedule::before,
+.dress-minimal::before,
+.gift-minimal::before,
+.minimal-rsvp::before,
+.minimal-finale::before {
+  content: "";
+  position: absolute;
+  inset: 8px 14px;
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at center,
+      rgba(0,0,0,0.18) 0%,
+      rgba(0,0,0,0.10) 42%,
+      rgba(0,0,0,0.00) 78%);
+  z-index: -1;
+  pointer-events: none;
+  filter: blur(12px);
+}
+
+/* Inputs and small cards slightly brighter */
+.option-card > span,
+.minimal-rsvp .rsvp__form input[type=text],
+.minimal-rsvp .rsvp__form textarea,
+.minimal-finale .countdown > div,
+.bank-details {
+  background: rgba(255, 255, 255, 0.84) !important;
+  border-color: rgba(255, 255, 255, 0.25) !important;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+/* Slightly brighten the whole content area for readability */
+.main::after {
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.10) 0%,
+    rgba(255,255,255,0.08) 28%,
+    rgba(255,255,255,0.10) 62%,
+    rgba(255,255,255,0.14) 100%
+  ) !important;
+}
+
+/* ===== v9 stronger background veil for readability ===== */
+/* Stronger global veil over the static terrace background. */
+.main::after {
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.34) 0%,
+    rgba(255,255,255,0.28) 22%,
+    rgba(255,255,255,0.24) 46%,
+    rgba(255,255,255,0.30) 72%,
+    rgba(255,255,255,0.36) 100%
+  ) !important;
+}
+
+/* Darker hero mist so the white title stays readable. */
+.main .hero__mist {
+  background: linear-gradient(
+    180deg,
+    rgba(24,42,58,0.46) 0%,
+    rgba(24,42,58,0.30) 32%,
+    rgba(24,42,58,0.24) 60%,
+    rgba(20,34,48,0.42) 100%
+  ) !important;
+}
+
+/* Add an invisible soft halo behind text sections without creating visible cards. */
+.main .paper-section::before,
+.main .schedule::before,
+.main .dress-minimal::before,
+.main .gift-minimal::before,
+.main .minimal-rsvp::before,
+.main .minimal-finale::before,
+.main .venue::before {
+  content: '';
+  position: absolute;
+  inset: 10px 12px;
+  border-radius: 30px;
+  background: radial-gradient(circle at center,
+    rgba(255,255,255,0.32) 0%,
+    rgba(255,255,255,0.18) 44%,
+    rgba(255,255,255,0.06) 68%,
+    rgba(255,255,255,0.00) 100%);
+  filter: blur(10px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Stronger readability on all text. */
+.main :is(h1,h2,h3,p,span,strong,small,time,label,legend,figcaption,em,i,a,button) {
+  text-shadow:
+    0 1px 3px rgba(255,255,255,.90),
+    0 0 16px rgba(255,255,255,.50) !important;
+}
+.main .hero :is(h1,h2,h3,p,span,strong,small,time,label,legend,figcaption,em,i,a,button) {
+  text-shadow:
+    0 2px 7px rgba(0,0,0,.62),
+    0 0 24px rgba(0,0,0,.36) !important;
+}
+
+/* Tiny extra lift for inputs/cards over the photo background. */
+.option-card > span,
+.minimal-rsvp .rsvp__form input[type=text],
+.minimal-rsvp .rsvp__form textarea,
+.minimal-finale .countdown > div,
+.bank-details,
+.calendar,
+.look-preview__label {
+  background: rgba(255,255,255,0.88) !important;
+  box-shadow: 0 10px 26px rgba(0,0,0,0.10) !important;
+}

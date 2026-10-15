@@ -1,0 +1,113 @@
+/* V&G palette study — deep botanical green + restrained champagne ochre.
+   Applied only to the site after the intro; animation, media and layout untouched.
+   Deliberately avoid pale yellow/green on the light terrace photo. */
+:root {
+  --vg-forest: #173f32;
+  --vg-forest-strong: #10382c;
+  --vg-ink-green: #233b2f;
+  --vg-gold: #875516;
+  --vg-gold-soft: #a37028;
+  --vg-white: #fffef9;
+}
+
+/* On the pale-blue/ivory terrace, dark green typography reads much more clearly
+   than light green or bright yellow. Retain a fine highlight only on the glyphs. */
+.main :is(.editorial-title, .section-title, .date-number, .venue__name,
+  .look-panel__title, .minimal-finale h2, .calendar__month) {
+  color: var(--vg-forest-strong) !important;
+  text-shadow: 0 1px 0 rgba(255,255,255,.94), 0 0 13px rgba(255,255,255,.64) !important;
+}
+.main :is(.editorial-title em, .section-title em,
+  .minimal-finale > strong, .date-month, .dress-minimal__sub,
+  .minimal-finale__sign, .couple-photo figcaption) {
+  color: var(--vg-gold) !important;
+  text-shadow: 0 1px 0 rgba(255,255,255,.96), 0 0 12px rgba(255,255,255,.70) !important;
+}
+.main :is(.paper-section .eyebrow, .minimal-finale .eyebrow,
+  .venue .eyebrow, .minimal-rsvp .eyebrow, .calendar__days,
+  .countdown-caption, .palette-note, .bank-details__label) {
+  color: var(--vg-forest) !important;
+  text-shadow: 0 1px 0 #fff, 0 0 13px rgba(255,255,255,.76) !important;
+}
+.main :is(.editorial-copy, .editorial-copy.lead, .section-text,
+  .date-weekday, .venue__address, .minimal-timeline__item strong,
+  .minimal-timeline__item p, .minimal-timeline__item time,
+  .look-panel p, .dress-minimal__hint, .gift-minimal p,
+  .bank-details__value, .bank-details__hint,
+  .minimal-finale > p, .countdown strong, .countdown small,
+  .form-note, .rsvp__signature, .footer,
+  .calendar__dates, .field-label, .option-fieldset legend) {
+  color: var(--vg-ink-green) !important;
+  text-shadow: 0 1px 0 rgba(255,255,255,.97), 0 0 16px rgba(255,255,255,.67) !important;
+}
+
+/* Discrete golden accents, rather than full blocks or colored backgrounds. */
+.main .small-flourish,
+.main .line-flourish,
+.main .venue-visual__caption {
+  color: var(--vg-gold) !important;
+  text-shadow: 0 1px 0 rgba(255,255,255,.98), 0 0 14px rgba(255,255,255,.76) !important;
+}
+.main .cal-selected {
+  background: var(--vg-forest) !important;
+  color: var(--vg-white) !important;
+  box-shadow: 0 0 0 4px rgba(255,255,255,.60) !important;
+  text-shadow: 0 1px 3px rgba(0,0,0,.28) !important;
+}
+.main .minimal-timeline__item .timeline__dot {
+  background: var(--vg-gold-soft);
+  border-color: #f5f0e5;
+  box-shadow: 0 0 0 1px var(--vg-forest);
+}
+.main .minimal-timeline::before { background: rgba(31,76,56,.55) !important; }
+.main #dress-code .look-tab {
+  color: var(--vg-forest) !important;
+  text-shadow: 0 1px 0 rgba(255,255,255,.88) !important;
+}
+.main #dress-code .look-tab.active {
+  color: var(--vg-forest-strong) !important;
+  border-color: var(--vg-gold-soft) !important;
+}
+
+/* Buttons and controls: high-contrast ivory lettering on pine green. */
+.main :is(.minimal-button:not(.minimal-button--line), .button--dark, .rsvp__submit) {
+  background: var(--vg-forest-strong) !important;
+  border-color: var(--vg-forest-strong) !important;
+  color: var(--vg-white) !important;
+  text-shadow: none !important;
+}
+.main :is(.minimal-button:not(.minimal-button--line), .button--dark, .rsvp__submit) * {
+  color: var(--vg-white) !important;
+  text-shadow: none !important;
+}
+.main :is(.minimal-button--line, .copy-button) {
+  border-color: rgba(23,63,50,.64) !important;
+  color: var(--vg-forest-strong) !important;
+  text-shadow: none !important;
+}
+.main .option-card > span {
+  color: var(--vg-forest-strong) !important;
+  text-shadow: none !important;
+}
+.main .option-card:has(input:checked) > span {
+  border-color: var(--vg-gold-soft) !important;
+  box-shadow: 0 0 0 1px rgba(135,85,22,.22), 0 4px 16px rgba(0,0,0,.07) !important;
+}
+.main :is(input, textarea, select) {
+  color: #152b23 !important;
+  caret-color: var(--vg-gold) !important;
+}
+.main :is(input, textarea)::placeholder { color: #51665b !important; opacity: 1; }
+
+/* The first hero remains elegant: white on the darker video handoff, with a
+   muted champagne ampersand/rule only. No change to the opening video. */
+.main .hero :is(.hero__names, .hero__subtitle, .hero__eyebrow,
+  .hero__date, .hero__place, .hero__scroll) {
+  color: #fffdf7 !important;
+  text-shadow: 0 2px 6px rgba(12,31,39,.82), 0 0 24px rgba(12,31,39,.53) !important;
+}
+.main .hero__names span,
+.main .hero__rule { color: #ffdb97 !important; }
+.main .hero__rule span { background: rgba(255,219,151,.82) !important; }
+
+/* Opening and any preloader are intentionally unchanged. */

@@ -1,0 +1,59 @@
+/* Dress code photos. Everything else, including opening animation, stays unchanged. */
+#dress-code .looks{max-width:350px;width:100%}
+#dress-code .look-panel{padding:16px 0 17px}
+#dress-code .dress-look-image{appearance:none;-webkit-appearance:none;position:relative;display:block;width:100%;margin:0;border:0;padding:0;overflow:hidden;border-radius:18px;background:rgba(255,255,255,.7);cursor:zoom-in;box-shadow:0 9px 26px rgba(24,47,65,.13)}
+#dress-code .dress-look-image img{display:block;width:100%;height:auto;object-fit:contain;aspect-ratio:auto}
+#dress-code .dress-look-zoom{display:block;position:absolute;bottom:10px;left:50%;transform:translateX(-50%);width:max-content;max-width:calc(100% - 20px);padding:9px 13px;border-radius:30px;background:rgba(255,255,255,.91);color:#141414!important;font:600 9px/1.2 var(--sans);letter-spacing:1.25px;text-align:center;text-shadow:none!important;box-shadow:0 3px 14px rgba(0,0,0,.12)}
+#dress-code .dress-look-zoom span{font-size:13px;vertical-align:middle}
+#dress-code .look-panel__title{margin-top:15px}
+#dress-code .look-tab{min-height:48px}
+#dress-code .look-tab.active{border-color:#496b83;border-bottom-width:2px}
+#dress-code .dress-look-image:focus-visible,.dress-lightbox__close:focus-visible{outline:2px solid #365974;outline-offset:3px}
+.dress-lightbox[hidden]{display:none!important}
+.dress-lightbox{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;padding:calc(env(safe-area-inset-top) + 16px) 16px calc(env(safe-area-inset-bottom) + 16px)}
+.dress-lightbox__backdrop{position:absolute;inset:0;background:rgba(13,25,35,.73);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
+.dress-lightbox__dialog{position:relative;z-index:1;width:min(100%,410px);max-height:100%;overflow:auto;border-radius:20px;background:#fcfbf8;padding:16px 12px 12px;box-shadow:0 20px 65px rgba(0,0,0,.25)}
+.dress-lightbox__header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 2px 14px;font:400 25px/1.05 var(--serif);color:#181818}
+.dress-lightbox__close{display:flex;align-items:center;justify-content:center;flex:none;width:38px;height:38px;border-radius:50%;border:1px solid #e0e3e7;background:#fff;color:#181818;font:normal 29px/1 var(--sans);cursor:pointer}
+.dress-lightbox__image{display:block;width:100%;height:auto;object-fit:contain;border-radius:10px;background:#fff}
+.dress-lightbox__hint{margin:12px 0 2px;text-align:center;font:500 10px/1.3 var(--sans);letter-spacing:1.3px;color:#424242}
+@media(max-width:360px){#dress-code .dress-look-zoom{font-size:8px;letter-spacing:.6px}}
+
+/* New supplied dress palette: always AFTER the Per lei / Per lui image. */
+#dress-code .dress-palette-art {
+  box-sizing: border-box;
+  display: block;
+  position: relative;
+  width: min(100%, 350px);
+  max-width: 100%;
+  margin: 22px auto 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  text-align: center;
+}
+#dress-code .dress-palette-art .palette-note {
+  display: block;
+  margin: 0 0 14px;
+  padding: 0;
+  text-align: center;
+  font-size: 10px;
+  line-height: 1.5;
+  letter-spacing: 2px;
+}
+#dress-code .dress-palette-art img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 681 / 178;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 5px 18px rgba(33, 40, 36, 0.07);
+}
+@media (max-width: 375px) {
+  #dress-code .dress-palette-art { margin-top: 16px; }
+  #dress-code .dress-palette-art .palette-note {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+  }
+}
